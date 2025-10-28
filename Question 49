@@ -1,0 +1,47 @@
+/******************************************************************************
+WAPC to initialize the array with 10 integers of your choice. Input an integer 
+from the user. Check and display whether or not the input entered by the user 
+is present in the array or not. Use the binary search technique (Hint: Make sure the array elements are sorted).
+*******************************************************************************/
+
+#include <stdio.h>
+
+int binary_search(int arr[], int size, int target) {
+    int low = 0;
+    int high = size - 1;
+    while (low <= high) {
+        
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == target) {
+            return mid;
+        }
+        else if (arr[mid] < target) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    int arr[10] = {3, 7, 12, 18, 21, 29, 35, 42, 56, 63};
+    int n = 10;
+
+    int key;
+    printf("Enter an integer to search: ");
+    if (scanf("%d", &key) != 1) {
+        printf("Invalid input.\n");
+        return 1;
+    }
+
+    int result = binary_search(arr, n, key);
+    if (result != -1) {
+        printf("Element %d is present in the array at index %d.\n", key, result);
+    } else {
+        printf("Element %d is NOT present in the array.\n", key);
+    }
+
+    return 0;
+}
