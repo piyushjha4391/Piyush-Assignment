@@ -1,0 +1,29 @@
+/******************************************************************************
+WAPC to input the number of units of electricity consumed by a consumer. 
+Calculate and print the electricity bill based on the following criteria:
+First 100 units: Rs. 2 per unit
+Next 200 units: Rs. 3 per unit
+Above 300 units: Rs. 4 per unit
+A surcharge of 2.5% is levied on the bill if the number of units consumed exceeds 300 units.
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    float unit;
+    printf("Enter the number of units of electricity consumed by the consumer:");
+    scanf("%f",&unit);
+    if(unit<=100){
+        printf("\nThe bill is:%f",unit*2);
+    }
+    else if(unit<=300){
+        printf("\nThe bill is%f",unit*3);
+    }
+    else if(unit>=300){
+        printf("\nThe bill is:%f",unit*4*2.5);
+    }
+   
+
+    return 0;
+}
