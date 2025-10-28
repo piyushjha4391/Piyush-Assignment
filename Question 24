@@ -1,0 +1,24 @@
+/******************************************************************************
+WAPC to check if a number is of 3-digits and divisible by 3.
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    if(n>=100){
+        printf("\nThis is a three digit number");
+        if(n%3==0){
+            printf("\nThe number is divisible by 3");
+        }
+    }
+    else{
+        printf("\nThis is not a three dight number");
+    }
+    
+    
+    return 0;
+}
