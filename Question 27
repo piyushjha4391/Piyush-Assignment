@@ -1,0 +1,43 @@
+/******************************************************************************
+ write a program in c language to do the following: 
+Input: account balance, withdrawal amount.
+Follow the given rules:
+Withdrawal amount must be a multiple of 100.
+Withdrawal must not exceed balance.
+Maintain a minimum balance of ₹500 after withdrawal.
+Output: Transaction success or failure with reason.
+*******************************************************************************/
+
+
+#include <stdio.h>
+
+int main() {
+    float balance;
+    int withdrawal;
+
+    
+    printf("Enter account balance: ₹");
+    scanf("%f", &balance);
+
+    printf("Enter withdrawal amount: ₹");
+    scanf("%d", &withdrawal);
+    if (withdrawal % 100 != 0) {
+        printf("Transaction failed: Withdrawal amount must be a multiple of ₹100.\n");
+    } else if (withdrawal > balance) {
+        printf("Transaction failed: Insufficient balance.\n");
+    } else if ((balance - withdrawal) < 500) {
+        printf("Transaction failed: Minimum balance of ₹500 must be maintained after withdrawal.\n");
+    } else {
+        balance -= withdrawal;
+        printf("Transaction successful.\n");
+        printf("Remaining balance: ₹%.2f\n", balance);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
