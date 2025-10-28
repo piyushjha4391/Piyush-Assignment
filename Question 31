@@ -1,0 +1,24 @@
+/******************************************************************************
+WAPC to input a positive integer from the user. Find and display the factorial of the number.
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    unsigned long long factorial = 1;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    if (n < 0) {
+        printf("Invalid input. Please enter a positive integer.\n");
+        return 1;
+    }
+    for (int i = 1; i <= n; ++i) {
+        factorial *= i;
+    }
+
+    // Output
+    printf("Factorial of %d is %llu\n", n, factorial);
+
+    return 0;
+}
