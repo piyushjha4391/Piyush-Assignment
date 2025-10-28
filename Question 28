@@ -1,0 +1,60 @@
+/******************************************************************************
+WAPC to do the following:
+Input: day, month, year.
+Check the following:
+Month between 1 and 12.
+Correct days in month (30 vs 31 days).
+February: 28 days normally, 29 days if leap year.
+Output: "Valid date" or "Invalid date".
+*******************************************************************************/
+
+#include <stdio.h>
+
+// Function to check for leap year
+int isLeapYear(int year) {
+    return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+}
+
+// Function to check if date is valid
+int isValidDate(int day, int month, int year) {
+    // Check if month is valid
+    if (month < 1 || month > 12)
+        return 0;
+
+    // Days in each month (non-leap year)
+    int daysInMonth[] = { 0, 31, 28, 31, 30, 31, 30, 31,
+                          31, 30, 31, 30, 31 };
+
+    // Adjust February if leap year
+    if (month == 2 && isLeapYear(year))
+        daysInMonth[2] = 29;
+
+    // Check if day is valid for the given month
+    if (day < 1 || day > daysInMonth[month])
+        return 0;
+
+    return 1;
+}
+
+int main() {
+    int day, month, year;
+
+    // Input
+    printf("Enter day: ");
+    scanf("%d", &day);
+
+    printf("Enter month: ");
+    scanf("%d", &month);
+
+    printf("Enter year: ");
+    scanf("%d", &year);
+
+    // Check and output
+    if (isValidDate(day, month, year)) {
+        printf("Valid date\n");
+    } else {
+        printf("Invalid date\n");
+    }
+
+    return 0;
+}
