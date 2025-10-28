@@ -1,0 +1,26 @@
+/******************************************************************************
+WAPC to check if a triangle is valid or not. If it is valid, check and print if // 2 sides r same
+it is isosceles, scalene or equilateral.
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int s1,s2,s3;//s=sides
+    printf("Enter three sides of a triangle:");
+    scanf("%d %d %d", &s1 , &s2 , &s3);
+    if(s1==s2 && s2==s3){
+        printf("\nEquilateral triangle");
+    }
+    else if(s1==s2 || s2==s3 || s1==s3){
+        printf("\nIsosceles triangle");
+    }
+    else{
+        printf("\nScalene triangle");
+    }
+    
+   
+   
+    return 0;
+}
