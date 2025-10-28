@@ -1,0 +1,41 @@
+/******************************************************************************
+WAPC to input a positive integer. Assume that the number is of 3 digits. Check
+and print if the number is Armstrong or not. Note: An Armstrong number is a 
+number that is equal to the sum of its own digits each raised to the power of
+the number of digits, for example, 153 = 1³ + 5³ + 3³.
+*******************************************************************************/
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int n;
+    int n1,n2,n3;
+    int x;
+    printf("Enter a three digit number:");
+    scanf("%d",&n);
+    if(n>99){
+        printf("\nThis is a number of three digits");
+        printf("\nEnter the first digit:");
+        scanf("%d",&n1);
+        printf("\nEnter the second digit:");
+        scanf("%d",&n2);
+        printf("\nEnter the third digit:");
+        scanf("%d",&n3);
+        
+        x=pow(n1,3)+pow(n2,3)+pow(n3,3);
+        if(x==n){
+            printf("\nThis is a Armstrong number");
+        }
+        else{
+            printf("\nThis is not a Armstrong  number");
+        }
+        
+    }
+    else{
+        printf("\nThis is not a three digit number");
+    }
+
+    return 0;
+}
