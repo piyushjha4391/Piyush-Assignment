@@ -1,0 +1,23 @@
+/******************************************************************************
+WAPC to a character in lowercase. Check and print if the character is a vowel or consonant.
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    char X;
+    printf("Enter a character:");
+    scanf("%c",&X);
+    if( X=='a'|| X=='e'|| X=='i'|| X=='o'|| X=='u'){
+        printf("\nThe character is a vowel");
+    }
+    else{
+        printf("\nThe character is a consonant");
+    }
+    
+    
+   
+
+    return 0;
+}
